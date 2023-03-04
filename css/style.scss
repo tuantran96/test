@@ -1,0 +1,471 @@
+html {
+    font-size: 62.5%; //1rem = 10px
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+    padding-bottom: 20rem;
+}
+@mixin flex($align: flex-start, $justify: flex-start, $wrap: wrap, $dir: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+    flex-direction: $dir;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1350px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.header {
+    background-color: #FEF7F6;
+    text-align: center;
+    padding: 1.7rem 0 1.6rem 0;
+    .container {
+        @include flex(center, space-between);        
+    }
+    &__contact {
+        display: flex;
+        &-phone {
+            margin-right: 2rem;
+        }
+    }
+    &__menu {
+        &-list {
+           @include flex(center, space-between);
+        }
+        &-item {
+            list-style: none;
+            margin-left: 2rem;
+        }
+    }
+}
+.nav {
+    background-color: white;
+    padding: 23px 0 0px 0;
+    height: 80px;
+    .container {
+        display: flex;
+        justify-content: space-between;   
+    }
+    &__inner {
+        width: 10rem;
+        @include flex(center);
+    }
+    &__menu {
+        &-list {
+            @include flex(center, space-between);
+        }
+        &-item {
+            list-style: none;
+            margin-left: 2rem;
+        }
+        &-link {
+            color: black;
+            font-size: 20px;
+        }
+    }
+}
+.banner {
+    display: flex;
+    height: 315px;
+    background-color: #F9BAC2;
+    padding: 0px 0 0 155px;
+    &__left {
+        text-align: center;
+        width: 50%;
+        padding: 40px 0 0 0;
+        p {
+            font-size: 18px;
+        }
+        h1 {
+            font-size: 47px;
+            padding: 5px 36px 15px 45px;
+        }
+    }
+    &__right {
+        width: 50%;
+        &-image {
+            height: 100%;
+            margin: 0 0px 0px 25px;
+        }
+    }
+}
+.btn {
+        cursor: pointer;
+        outline: none;
+        font-size: 2.2rem;
+        text-align: center;
+        padding: 1.5rem 3rem;
+        display: inline-block;
+        border: 0;
+        color: red;
+        background-color: transparent;
+        &--border{
+            border: 3px solid;
+        }
+}
+.clothes {
+    &__title {
+        text-align: center;
+        font-size: 26px;
+        padding: 44px 0 64px 0;
+        text-transform: uppercase;
+    }
+    &__list {
+        @include flex(stretch, space-between,wrap);
+        &-item {
+            width: calc(33% - 21px);
+            list-style: none;
+            border-radius: 2rem;
+            box-shadow: 1px 0 9px 0px #f9bac2;
+        }
+        &-image {
+            border-radius: inherit;
+        }
+        &-desc {
+            text-align: center;
+            padding: 26px 0 19px 0;
+            h5 {
+                font-size: 14px;
+                padding: 0px 0 5px 0;
+            }
+        }
+        &-rating {
+            color: red;
+            font-size: 14px;
+            padding-bottom: 3px;
+        }
+        &-price {
+            font-size: 18px;
+            color: black;
+            font-weight: 600;
+        }
+    }
+}
+.banner02 {
+    display: flex;
+    height: 315px;
+    background-color: #F9BAC2;
+    padding: 0px 0 0 155px;
+    &__left {
+        text-align: center;
+        width: 50%;
+        padding: 30px 0 0 0;
+        h4 {
+            padding: 21px 0px 17px 0;
+            font-size: 45px;
+            text-transform: capitalize;
+        }
+        h1 {
+            font-size: 60px;
+            font-weight: normal;
+            margin: -17px 0 -7px 0;
+        }
+    }
+    &__right {
+        width: 50%;
+        &-image {
+            height: 100%;
+            margin: 0 0px 0px 25px;
+        }
+    }
+}
+.accessory {
+    &__title {
+        text-align: center;
+        font-size: 26px;
+        padding: 44px 0 64px 0;
+        text-transform: uppercase;
+    }
+    &__list {
+        @include flex(stretch, space-between,wrap);
+        &-item {
+            width: calc(25% - 22.5px);
+            list-style: none;
+            border-radius: 2rem;
+            box-shadow: 1px 0 9px 0px #f9bac2;
+        }
+        &-image {
+            border-radius: inherit;
+        }
+        &-desc {
+            text-align: center;
+            padding: 26px 0 19px 0;
+            h5 {
+                font-size: 14px;
+                padding: 0px 0 5px 0;
+            }
+        }
+        &-rating {
+            color: red;
+            font-size: 14px;
+            padding-bottom: 3px;
+        }
+        &-price {
+            font-size: 18px;
+            color: black;
+            font-weight: 600;
+        }
+    }
+}
+.transport {
+    margin-top: 11rem;
+    &__menu {
+        &-list {
+            @include flex(stretch, space-between, nowrap);
+        }
+        &-item {
+            list-style: none;
+            width: calc(25% - 22.5px);
+            text-align: center;
+            border-radius: 7px;
+            border: 1px solid;
+            padding: 25px 0 25px 0px;
+            box-shadow: inset 0px 0px 7px 0px red;
+            .icon {
+                font-size: 60px;
+                color: red;
+            }
+        }
+        &-desc {
+            h5 {
+                font-size: 18px;
+                font-weight: normal;
+            }
+            p {
+                font-weight: 300;
+                font-size: 16px;
+                padding: 6px 0 0 0;
+            }
+        }
+    }
+}
+.trending {
+    &__title {
+        text-align: center;
+        font-size: 26px;
+        padding: 44px 0 64px 0;
+    }
+    &__list {
+        @include flex(stretch, space-between,wrap);
+        &-item {
+            width: calc(25% - 21.5px);
+            list-style: none;
+            border-radius: 2rem;
+            box-shadow: 1px 0 9px 0px #f9bac2;
+            margin-bottom: 4rem;
+        }
+        &-image {
+            border-radius: inherit;
+        }
+        &-desc {
+            text-align: center;
+            padding: 26px 0 19px 0;
+            h5 {
+                font-size: 14px;
+                padding: 0px 0 5px 0;
+            }
+        }
+        &-rating {
+            color: red;
+            font-size: 14px;
+            padding-bottom: 3px;
+        }
+        &-price {
+            font-size: 18px;
+            color: black;
+            font-weight: 600;
+        }
+    }
+}
+.silon {
+    &__title {
+        text-align: center;
+        font-size: 26px;
+        padding: 44px 0 64px 0;
+    }
+    &__menu {
+        &-list {
+            @include flex(stretch, space-between,wrap);            
+        }
+        &-item {
+            width: calc(33% - 21px);
+            list-style: none;
+            border-radius: 2rem;
+            box-shadow: 1px 0 9px 0px #f9bac2;
+            margin-bottom: 4rem;
+        }
+        &-image {
+            border-radius: 2rem;
+        }
+        &-info {
+            padding: 15px 0 0 0 ;
+        }
+        &-date {
+            font-size: 15px;
+            color: gray;
+            padding-left: 22px;
+            .box:before {
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ff5353;
+                border-radius: 2px;
+                width: 12px;
+                height: 6px;
+            }
+        }        
+        &-link {
+            font-size: 17px;
+            color: #000;
+            font-weight: 500;
+        }
+        &-partner {
+            display: flex;
+            margin: 10px 0 0 0;
+            font-size: 15px;
+            border-top: 1px solid #E8BB97;
+            padding: 20px 0 20px 0;
+            color: gray;
+            a:hover {
+                color: red;
+            }
+        }
+        &-women a {
+            display: flex;
+            p {
+                margin: -3px 0 0 5px;
+            }
+            margin-right: 15px;
+        }
+        &-tivi a {           
+            display: flex;
+            p {
+                margin: -3px 0 0 7px;
+            }
+        }
+    }
+}
+.follow {
+    &__title {
+        text-align: center;
+        font-size: 26px;
+        padding: 44px 0 64px 0;
+    }
+    &__list {
+        @include flex(stretch, space-between,wrap);            
+        &-item {
+            width: calc(25% - 21.5px);
+            list-style: none;
+            border-radius: 2rem;
+            box-shadow: 1px 0 9px 0px #f9bac2;
+            margin-bottom: 4rem;
+        }
+        &-image {
+            border-radius: inherit;
+        }
+    }
+}
+.footer {
+    border: 1px solid #E9E2D8;
+    background-color: #E9E2D8;
+
+    &__list {
+        @include flex(stretch, space-between,wrap);
+        &-title {
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 0 0 12px 0;
+        }            
+        &-item {
+            width: calc(25% - 21.5px);
+            list-style: none;
+            margin-bottom: 4rem;
+            padding: 40px 0 0 26px;
+            &:first-child {
+                padding-left: 40px;
+            }
+            &:last-child {
+                padding-left: 12px;
+            }
+            p {
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: 29px 0 0px 0;
+            }
+        }
+        &-app {
+            display: flex;
+            // padding: 0px 0 23px 0;
+            border-bottom: 1px solid gray;
+            .google-play {
+                display: flex;
+                width: 50%;
+                background: white;
+                margin-right: 10px;
+                color: black;
+                p {
+                    padding: 17px 9px 23px 11px;
+                }
+            }
+            .app-store {
+                display: flex;
+                width: 50%;
+                background: red;
+                color: white;
+                p {
+                    padding: 17px 9px 23px 11px;
+                }
+            }
+        }
+        &-contact {
+            ion-icon {
+                font-size: 30px;
+                margin-right: 1rem;
+                text-align: center;
+                padding: 18px 0px 0 16px;
+            }
+        }
+    }
+    &__menu {
+        list-style: none;
+        padding: 0;
+        &-list {
+            padding: 0 0 10px 0;
+            font-size: 16px;
+        }
+    }
+}
+
+
+
